@@ -1,0 +1,63 @@
+{
+  "name": "md-copy",
+  "displayName": "Markdown Copy",
+  "description": "Adds copy buttons to the built-in Markdown preview — copy the entire file or individual code blocks.",
+  "version": "0.0.1",
+  "publisher": "calvinwan",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "files": [
+    "media",
+    "out"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "md-copy.copyMarkdown",
+        "title": "Copy Markdown",
+        "icon": "$(copy)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "md-copy.copyMarkdown",
+          "when": "activeWebviewPanelId == 'markdown.preview'",
+          "group": "navigation"
+        },
+        {
+          "command": "md-copy.copyMarkdown",
+          "when": "resourceLangId == markdown",
+          "group": "navigation"
+        }
+      ]
+    },
+    "markdown.previewScripts": [
+      "./media/preview.js"
+    ],
+    "markdown.previewStyles": [
+      "./media/preview.css"
+    ],
+    "markdown.markdownItPlugins": true
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.7.1",
+    "typescript": "^5.5.0"
+  }
+}

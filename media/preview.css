@@ -1,0 +1,53 @@
+.mdp-copy-btn {
+  display: inline-block;
+  padding: 2px 8px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--vscode-descriptionForeground, #888);
+  cursor: pointer;
+  user-select: none;
+}
+
+.mdp-copy-btn:hover {
+  background: var(--vscode-toolbar-hoverBackground, rgba(128, 128, 128, 0.15));
+  border-color: var(--vscode-panel-border, rgba(128, 128, 128, 0.3));
+}
+
+.mdp-copy-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.mdp-copy-btn:focus-visible {
+  outline: 1px solid var(--vscode-focusBorder, #007fd4);
+  outline-offset: 2px;
+}
+
+.mdp-copy-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 4px 0;
+  background: var(--vscode-editor-background, #fff);
+}
+
+.mdp-code-wrapper {
+  position: relative;
+}
+
+.mdp-code-wrapper pre {
+  padding-right: 72px;
+}
+
+.mdp-code-copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
