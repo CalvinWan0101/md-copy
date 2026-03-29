@@ -1,53 +1,49 @@
 # Markdown Copy
 
-Markdown Copy adds copy actions to VS Code's built-in Markdown preview.
+Markdown Copy adds practical copy actions to VS Code's built-in Markdown workflow.
 
-It supports two common cases:
+It covers two common cases:
 
-- Copy the entire Markdown source of the current file
-- Copy the content of individual code blocks directly from the preview
+- Copy the full Markdown source of the current file
+- Copy individual code blocks directly from the built-in Markdown preview
 
 ## Features
 
-### Copy the full Markdown document
+### Copy the whole Markdown file
 
-When you open a Markdown file, the extension contributes a `Copy Markdown` command.
+The extension contributes a `Copy Markdown` command that copies the raw Markdown source of the current file to the clipboard.
 
-You can run it from:
+You can trigger it from:
 
 - The editor title area while editing a Markdown file
-- The Markdown preview toolbar area when preview is active
-- Command Palette via `Markdown Copy: Copy Markdown`
+- The Markdown preview toolbar when preview is active
+- The Command Palette with `Copy Markdown`
 
-The command copies the raw Markdown source to the clipboard.
+### Copy code blocks from preview
 
-### Copy individual code blocks in preview
+Inside VS Code's built-in Markdown preview, every code block gets a `Copy` button.
 
-Inside the built-in Markdown preview, each code block gets a `Copy` button.
+Clicking it copies only that code block's content, with trailing blank lines trimmed.
 
-Clicking that button copies only the code block content, with trailing blank lines trimmed.
+## How To Use
+
+1. Open a Markdown file.
+2. Open the built-in Markdown preview.
+3. Use the top `Copy` button to copy the full Markdown source.
+4. Use a code block's `Copy` button to copy just that snippet.
 
 ## Requirements
 
 - VS Code `1.80.0` or newer
 
-No extra setup is required.
+## Commands
 
-## Usage
+- `Copy Markdown`
 
-1. Open any `.md` file in VS Code.
-2. Open Markdown preview.
-3. Use the top `Copy` button to copy the whole Markdown file.
-4. Use the `Copy` button on a code block to copy just that block.
+## Limitations
 
-## Extension Settings
-
-This extension currently does not add any custom settings.
-
-## Known Limitations
-
-- Copy buttons are added only to VS Code's built-in Markdown preview.
-- Other Markdown renderers or third-party preview extensions are not modified.
+- Copy buttons are injected only into VS Code's built-in Markdown preview.
+- Third-party Markdown preview extensions are not modified.
 
 ## Development
 
@@ -57,28 +53,20 @@ Install dependencies:
 npm install
 ```
 
-Compile:
+Compile the extension:
 
 ```bash
 npm run compile
 ```
 
-Watch mode:
+Run TypeScript in watch mode:
 
 ```bash
 npm run watch
 ```
 
-Package the extension:
+Create a VSIX package:
 
 ```bash
 npm run package
 ```
-
-## Release Notes
-
-### 0.0.1
-
-- Initial release
-- Added copy support for full Markdown documents
-- Added copy buttons for code blocks in Markdown preview

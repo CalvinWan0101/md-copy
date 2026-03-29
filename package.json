@@ -3,11 +3,23 @@
   "displayName": "Markdown Copy",
   "description": "Adds copy buttons to the built-in Markdown preview — copy the entire file or individual code blocks.",
   "version": "0.0.1",
-  "publisher": "calvinwan",
+  "license": "MIT",
+  "publisher": "CalvinWan0101",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CalvinWan0101/md-copy"
+  },
+  "bugs": {
+    "url": "https://github.com/CalvinWan0101/md-copy/issues"
+  },
+  "homepage": "https://github.com/CalvinWan0101/md-copy",
   "engines": {
     "vscode": "^1.80.0"
   },
   "files": [
+    "LICENSE",
+    "readme.md",
     "media",
     "out"
   ],
